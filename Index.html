@@ -34,15 +34,15 @@
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
             <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
                 <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Subscribers</p>
-                <h3 id="subs-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">0</h3>
+                <h3 id="subs-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">...</h3>
             </div>
             <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
                 <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Total Views</p>
-                <h3 id="views-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">0</h3>
+                <h3 id="views-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">...</h3>
             </div>
             <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
                 <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Total Videos</p>
-                <h3 id="video-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">0</h3>
+                <h3 id="video-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">...</h3>
             </div>
             <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
                 <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Avg. Retention</p>
@@ -60,37 +60,63 @@
                     <p class="text-gray-600 leading-relaxed text-lg mb-6">
                         Sarrawy Dev is a specialized educational platform focused on delivering high-quality software development tutorials. We bridge the gap between theory and production-ready code for thousands of Arabic-speaking developers worldwide.
                     </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-4 py-2 bg-indigo-50 text-indigo-700 rounded-full text-sm font-bold border border-indigo-100">#ASP.NET Core</span>
-                        <span class="px-4 py-2 bg-purple-50 text-purple-700 rounded-full text-sm font-bold border border-purple-100">#Blazor</span>
-                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-bold border border-blue-100">#SoftwareArchitecture</span>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <span class="block text-sm font-bold text-gray-400 uppercase mb-1">Primary Niche</span>
+                            <span class="font-semibold text-gray-700">Software Engineering</span>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <span class="block text-sm font-bold text-gray-400 uppercase mb-1">Focus</span>
+                            <span class="font-semibold text-gray-700">.NET Ecosystem</span>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <span class="block text-sm font-bold text-gray-400 uppercase mb-1">Content Type</span>
+                            <span class="font-semibold text-gray-700">Practical Tutorials</span>
+                        </div>
                     </div>
                 </section>
 
                 <section class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-                    <h2 class="header-font text-2xl font-bold mb-6 text-gray-800 flex items-center">
-                        <svg class="w-6 h-6 mr-2 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        Top Performing Content
-                    </h2>
+                    <h2 class="header-font text-2xl font-bold mb-6 text-gray-800">Top Performing Content</h2>
                     <div class="grid md:grid-cols-2 gap-6">
-                        <div class="group border p-5 rounded-xl bg-gray-50 border-gray-100 card-hover">
-                            <h4 class="font-bold text-indigo-800 uppercase text-sm">Radzen Blazor Tutorial</h4>
-                            <p class="text-2xl font-bold text-gray-800 mt-1">18.6K+</p>
-                            <p class="text-xs text-gray-500">Evergreen content with high search intent.</p>
+                        <div class="group border p-4 rounded-xl bg-gray-50 border-gray-100">
+                            <h4 class="font-bold text-indigo-800 uppercase">Radzen Blazor Tutorial</h4>
+                            <p class="text-sm text-gray-500 mt-2">18.6K+ Views • Evergreen content providing high brand visibility.</p>
                         </div>
-                        <div class="group border p-5 rounded-xl bg-gray-50 border-gray-100 card-hover">
-                            <h4 class="font-bold text-indigo-800 uppercase text-sm">ASP.NET Core - Excel/CSV</h4>
-                            <p class="text-2xl font-bold text-gray-800 mt-1">15.2K+</p>
-                            <p class="text-xs text-gray-500">Targeted by enterprise developers.</p>
+                        <div class="group border p-4 rounded-xl bg-gray-50 border-gray-100">
+                            <h4 class="font-bold text-indigo-800 uppercase">ASP.NET Core - Excel/CSV</h4>
+                            <p class="text-sm text-gray-500 mt-2">15.2K+ Views • Targeted by professional enterprise developers.</p>
+                        </div>
+                        <div class="group border p-4 rounded-xl bg-gray-50 border-gray-100">
+                            <h4 class="font-bold text-indigo-800 uppercase">QR Code Generation</h4>
+                            <p class="text-sm text-gray-500 mt-2">14.2K+ Views • Practical tool-based tutorial.</p>
+                        </div>
+                        <div class="group border p-4 rounded-xl bg-gray-50 border-gray-100">
+                            <h4 class="font-bold text-indigo-800 uppercase">Permission Based Auth</h4>
+                            <p class="text-sm text-gray-500 mt-2">13.4K+ Views • Deep technical tutorial.</p>
                         </div>
                     </div>
                 </section>
             </div>
 
             <div class="space-y-8">
+                <section class="bg-indigo-50 p-8 rounded-3xl border border-indigo-100">
+                    <h3 class="header-font text-xl font-bold mb-4 text-indigo-700">Partnership Options</h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 text-sm text-gray-700">
+                            <div class="flex-shrink-0 w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-[10px] font-bold">1</div>
+                            <p><span class="font-bold">Dedicated Tutorial:</span> Full video featuring your tool.</p>
+                        </li>
+                        <li class="flex gap-3 text-sm text-gray-700">
+                            <div class="flex-shrink-0 w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-[10px] font-bold">2</div>
+                            <p><span class="font-bold">Organic Shoutout:</span> Integrated 60-90s mention.</p>
+                        </li>
+                    </ul>
+                </section>
+
                 <div class="bg-gray-900 text-white p-8 rounded-3xl shadow-xl text-center">
                     <h3 class="header-font text-2xl font-bold mb-2">Build with Me</h3>
-                    <p class="text-gray-400 text-sm mb-6 font-light">Promote your dev tools to a professional audience.</p>
+                    <p class="text-gray-400 text-sm mb-6">Let's promote your tech to developers.</p>
                     <div class="space-y-3">
                         <a href="mailto:h.sarrawy@gmail.com" class="block w-full bg-indigo-600 hover:bg-indigo-700 py-4 rounded-2xl font-bold transition">Email Contact</a>
                         <a href="https://www.linkedin.com/in/hsarrawy" target="_blank" class="block w-full bg-white/10 hover:bg-white/20 py-4 rounded-2xl font-bold transition">LinkedIn Profile</a>
@@ -102,17 +128,28 @@
 
     <script>
         const API_KEY = 'AIzaSyBiAJ3pRWV5Jy1Xy92IhEDRRPqL8_HWJXI';
-        const CHANNEL_ID = 'UCmcc9ZdjmQomaJn53AX2M1Q';
+        const CHANNEL_ID = 'UCmcc9ZdjmQomaJn53AX2M1Q'; 
 
-        function animateValue(obj, start, end, duration, isFormatted = false) {
+        // دالة العداد التصاعدي
+        function animateNumber(id, targetValue, duration, format = false) {
+            const obj = document.getElementById(id);
             let startTimestamp = null;
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const currentNum = Math.floor(progress * (end - start) + start);
-                obj.innerHTML = isFormatted ? formatNumber(currentNum) : currentNum.toLocaleString();
-                if (progress < 1) window.requestAnimationFrame(step);
-                else obj.innerHTML = isFormatted ? formatNumber(end) : end.toLocaleString();
+                const current = Math.floor(progress * targetValue);
+                
+                if (format) {
+                    obj.innerText = formatNumber(current);
+                } else {
+                    obj.innerText = current.toLocaleString();
+                }
+
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    obj.innerText = format ? formatNumber(targetValue) : targetValue.toLocaleString();
+                }
             };
             window.requestAnimationFrame(step);
         }
@@ -125,16 +162,26 @@
 
         async function fetchYouTubeStats() {
             try {
-                const res = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`);
-                const data = await res.json();
-                if (data.items?.length > 0) {
-                    const s = data.items[0].statistics;
-                    animateValue(document.getElementById('subs-count'), 0, parseInt(s.subscriberCount), 2000);
-                    animateValue(document.getElementById('views-count'), 0, parseInt(s.viewCount), 2000, true);
-                    animateValue(document.getElementById('video-count'), 0, parseInt(s.videoCount), 2000);
+                const url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`;
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.items && data.items.length > 0) {
+                    const stats = data.items[0].statistics;
+
+                    // تشغيل العداد التصاعدي للأرقام المسحوبة من الـ API
+                    animateNumber('subs-count', parseInt(stats.subscriberCount), 2000);
+                    animateNumber('views-count', parseInt(stats.viewCount), 2000, true);
+                    animateNumber('video-count', parseInt(stats.videoCount), 2000);
                 }
-            } catch (e) { console.error(e); }
+            } catch (error) {
+                console.error("خطأ في جلب البيانات:", error);
+                document.getElementById('subs-count').innerText = "2,975";
+                document.getElementById('views-count').innerText = "214K";
+                document.getElementById('video-count').innerText = "85";
+            }
         }
+
         window.onload = fetchYouTubeStats;
     </script>
 </body>
