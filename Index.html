@@ -157,7 +157,7 @@
     </main>
 
     <script>
-        const API_KEY = 'AIzaSyBiAJ3pRWV5Jy1Xy92IhEDRRPqL8_HWJXI';
+        // إزالة المفتاح المكشوف وتوفير آلية آمنة
         const CHANNEL_ID = 'UCmcc9ZdjmQomaJn53AX2M1Q'; 
 
         function animateNumber(id, target, duration, format = false) {
@@ -182,8 +182,20 @@
         }
 
         async function fetchYouTubeStats() {
+            // التحقق من وجود مفتاح في الرابط للحماية
+            const urlParams = new URLSearchParams(window.location.search);
+            const apiKeyFromUrl = urlParams.get('key');
+
+            if (!apiKeyFromUrl) {
+                // استخدام أرقام ثابتة محدثة في حال عدم وجود مفتاح (آمن للـ GitHub)
+                animateNumber('subs-count', 2975, 2000);
+                animateNumber('views-count', 567000, 2000, true);
+                animateNumber('video-count', 160, 2000);
+                return;
+            }
+
             try {
-                const response = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`);
+                const response = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${apiKeyFromUrl}`);
                 const data = await response.json();
                 if (data.items && data.items.length > 0) {
                     const stats = data.items[0].statistics;
@@ -193,9 +205,6 @@
                 }
             } catch (error) {
                 console.error("API Error:", error);
-                document.getElementById('subs-count').innerText = "2,975";
-                document.getElementById('views-count').innerText = "567K";
-                document.getElementById('video-count').innerText = "160";
             }
         }
         window.onload = fetchYouTubeStats;
