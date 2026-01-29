@@ -6,6 +6,7 @@
     <title>Sarrawy Dev - Media Kit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
         .header-font { font-family: 'Oswald', sans-serif; }
@@ -33,18 +34,22 @@
         
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
             <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
+                <i class="fa-solid fa-users text-indigo-500 mb-2"></i>
                 <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Subscribers</p>
                 <h3 id="subs-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">...</h3>
             </div>
             <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
+                <i class="fa-solid fa-eye text-indigo-500 mb-2"></i>
                 <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Total Views</p>
                 <h3 id="views-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">...</h3>
             </div>
             <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
+                <i class="fa-solid fa-video text-indigo-500 mb-2"></i>
                 <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Total Videos</p>
                 <h3 id="video-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">...</h3>
             </div>
             <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
+                <i class="fa-solid fa-chart-line text-indigo-500 mb-2"></i>
                 <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Avg. Retention</p>
                 <h3 class="header-font text-2xl md:text-3xl font-bold text-gray-800">38%</h3>
             </div>
@@ -54,7 +59,7 @@
             <div class="lg:col-span-2 space-y-8">
                 <section class="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-gray-100">
                     <h2 class="header-font text-3xl font-bold text-indigo-600 mb-6 flex items-center">
-                        <span class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center mr-3 font-mono text-sm">&lt;/&gt;</span>
+                        <i class="fa-solid fa-book-open mr-3"></i>
                         Channel Story
                     </h2>
                     <p class="text-gray-600 leading-relaxed text-lg mb-6">
@@ -62,14 +67,17 @@
                     </p>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                         <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <i class="fa-solid fa-code text-indigo-600 mb-2"></i>
                             <span class="block text-sm font-bold text-gray-400 uppercase mb-1">Primary Niche</span>
                             <span class="font-semibold text-gray-700">Software Engineering</span>
                         </div>
                         <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <i class="fa-brands fa-microsoft text-indigo-600 mb-2"></i>
                             <span class="block text-sm font-bold text-gray-400 uppercase mb-1">Focus</span>
                             <span class="font-semibold text-gray-700">.NET Ecosystem</span>
                         </div>
                         <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <i class="fa-solid fa-chalkboard-user text-indigo-600 mb-2"></i>
                             <span class="block text-sm font-bold text-gray-400 uppercase mb-1">Content Type</span>
                             <span class="font-semibold text-gray-700">Practical Tutorials</span>
                         </div>
@@ -77,22 +85,37 @@
                 </section>
 
                 <section class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-                    <h2 class="header-font text-2xl font-bold mb-6 text-gray-800">Top Performing Content</h2>
+                    <h2 class="header-font text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
+                        <i class="fa-solid fa-star text-yellow-500"></i>
+                        Top Performing Content
+                    </h2>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="group border p-4 rounded-xl bg-gray-50 border-gray-100 card-hover">
-                            <h4 class="font-bold text-indigo-800 uppercase">Radzen Blazor Tutorial</h4>
+                            <h4 class="font-bold text-indigo-800 uppercase flex items-center gap-2">
+                                <i class="fa-solid fa-layer-group text-sm"></i>
+                                Radzen Blazor Tutorial
+                            </h4>
                             <p class="text-sm text-gray-500 mt-2">18.6K+ Views • Evergreen content providing high brand visibility.</p>
                         </div>
                         <div class="group border p-4 rounded-xl bg-gray-50 border-gray-100 card-hover">
-                            <h4 class="font-bold text-indigo-800 uppercase">ASP.NET Core - Excel/CSV</h4>
+                            <h4 class="font-bold text-indigo-800 uppercase flex items-center gap-2">
+                                <i class="fa-solid fa-file-csv text-sm"></i>
+                                ASP.NET Core - Excel/CSV
+                            </h4>
                             <p class="text-sm text-gray-500 mt-2">15.2K+ Views • Targeted by professional enterprise developers.</p>
                         </div>
                         <div class="group border p-4 rounded-xl bg-gray-50 border-gray-100 card-hover">
-                            <h4 class="font-bold text-indigo-800 uppercase">QR Code Generation</h4>
+                            <h4 class="font-bold text-indigo-800 uppercase flex items-center gap-2">
+                                <i class="fa-solid fa-qrcode text-sm"></i>
+                                QR Code Generation
+                            </h4>
                             <p class="text-sm text-gray-500 mt-2">14.2K+ Views • Practical tool-based tutorial.</p>
                         </div>
                         <div class="group border p-4 rounded-xl bg-gray-50 border-gray-100 card-hover">
-                            <h4 class="font-bold text-indigo-800 uppercase">Permission Based Auth</h4>
+                            <h4 class="font-bold text-indigo-800 uppercase flex items-center gap-2">
+                                <i class="fa-solid fa-shield-halved text-sm"></i>
+                                Permission Based Auth
+                            </h4>
                             <p class="text-sm text-gray-500 mt-2">13.4K+ Views • Deep technical tutorial.</p>
                         </div>
                     </div>
@@ -101,7 +124,10 @@
 
             <div class="space-y-8">
                 <section class="bg-indigo-50 p-8 rounded-3xl border border-indigo-100">
-                    <h3 class="header-font text-xl font-bold mb-4 text-indigo-700">Partnership Options</h3>
+                    <h3 class="header-font text-xl font-bold mb-4 text-indigo-700 flex items-center gap-2">
+                        <i class="fa-solid fa-handshake"></i>
+                        Partnership Options
+                    </h3>
                     <ul class="space-y-4">
                         <li class="flex gap-3 text-sm text-gray-700">
                             <div class="flex-shrink-0 w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-[10px] font-bold">1</div>
@@ -118,8 +144,12 @@
                     <h3 class="header-font text-2xl font-bold mb-2">Build with Me</h3>
                     <p class="text-gray-400 text-sm mb-6">Let's promote your tech to developers.</p>
                     <div class="space-y-3">
-                        <a href="mailto:h.sarrawy@gmail.com" class="block w-full bg-indigo-600 hover:bg-indigo-700 py-4 rounded-2xl font-bold transition">Email Contact</a>
-                        <a href="https://www.linkedin.com/in/hsarrawy" target="_blank" class="block w-full bg-white/10 hover:bg-white/20 py-4 rounded-2xl font-bold transition">LinkedIn Profile</a>
+                        <a href="mailto:h.sarrawy@gmail.com" class="block w-full bg-indigo-600 hover:bg-indigo-700 py-4 rounded-2xl font-bold transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-envelope"></i> Email Contact
+                        </a>
+                        <a href="https://www.linkedin.com/in/hsarrawy" target="_blank" class="block w-full bg-white/10 hover:bg-white/20 py-4 rounded-2xl font-bold transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+                        </a>
                     </div>
                 </div>
             </div>
@@ -132,6 +162,7 @@
 
         function animateNumber(id, target, duration, format = false) {
             const obj = document.getElementById(id);
+            if(!obj) return;
             let startTimestamp = null;
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
