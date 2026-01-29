@@ -22,7 +22,7 @@
                 <img src="logoHand.png" alt="Sarrawy Dev Icon" class="w-full h-full object-contain scale-110">
             </div>
             <h1 class="header-font text-5xl md:text-6xl font-bold mb-2 uppercase tracking-tight text-white">Sarrawy Dev</h1>
-            <p class="text-xl opacity-90 font-light tracking-wide italic text-white">.NET Technologies • Web Development • Software Engineering</p>
+            <p class="text-xl opacity-90 font-light tracking-wide italic text-white text-center">.NET Technologies • Web Development • Software Engineering</p>
         </div>
         <svg class="absolute bottom-0 left-0 right-0 text-white fill-current" viewBox="0 0 1440 120">
             <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
@@ -58,7 +58,7 @@
                         Channel Story
                     </h2>
                     <p class="text-gray-600 leading-relaxed text-lg mb-6">
-                        Sarrawy Dev is a specialized educational platform focused on delivering high-quality software development tutorials. We bridge the gap between theory and production-ready code for thousands of Arabic-speaking developers worldwide.
+                        Sarrawy Dev is a specialized English-language educational platform delivering high-quality software development tutorials. We bridge the gap between theory and production-ready code for thousands of Arabic-speaking developers and global learners.
                     </p>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                         <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
@@ -130,19 +130,16 @@
         const API_KEY = 'AIzaSyBiAJ3pRWV5Jy1Xy92IhEDRRPqL8_HWJXI';
         const CHANNEL_ID = 'UCmcc9ZdjmQomaJn53AX2M1Q'; 
 
-        function animateValue(id, target, duration, isFormatted = false) {
+        function animateNumber(id, target, duration, format = false) {
             const obj = document.getElementById(id);
             let startTimestamp = null;
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const currentNum = Math.floor(progress * target);
-                obj.innerText = isFormatted ? formatNumber(currentNum) : currentNum.toLocaleString();
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                } else {
-                    obj.innerText = isFormatted ? formatNumber(target) : target.toLocaleString();
-                }
+                const current = Math.floor(progress * target);
+                obj.innerText = format ? formatNumber(current) : current.toLocaleString();
+                if (progress < 1) window.requestAnimationFrame(step);
+                else obj.innerText = format ? formatNumber(target) : target.toLocaleString();
             };
             window.requestAnimationFrame(step);
         }
@@ -159,9 +156,9 @@
                 const data = await response.json();
                 if (data.items && data.items.length > 0) {
                     const stats = data.items[0].statistics;
-                    animateValue('subs-count', parseInt(stats.subscriberCount), 2000);
-                    animateValue('views-count', parseInt(stats.viewCount), 2000, true);
-                    animateValue('video-count', parseInt(stats.videoCount), 2000);
+                    animateNumber('subs-count', parseInt(stats.subscriberCount), 2000);
+                    animateNumber('views-count', parseInt(stats.viewCount), 2000, true);
+                    animateNumber('video-count', parseInt(stats.videoCount), 2000);
                 }
             } catch (error) {
                 console.error("API Error:", error);
@@ -170,7 +167,6 @@
                 document.getElementById('video-count').innerText = "160";
             }
         }
-
         window.onload = fetchYouTubeStats;
     </script>
 </body>
