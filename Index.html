@@ -34,24 +34,26 @@
 
     <main class="max-w-6xl mx-auto px-6 -mt-16 pb-20 relative z-20">
         
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-            <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
-                <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Subscribers</p>
-                <h3 id="subs-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">0</h3>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
-                <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Total Views</p>
-                <h3 id="views-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">0</h3>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
-                <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Total Videos</p>
-                <h3 id="video-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">0</h3>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
-                <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Avg. Retention</p>
-                <h3 class="header-font text-2xl md:text-3xl font-bold text-gray-800">38%</h3>
-            </div>
-        </div>
+     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+    <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
+    <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Subscribers</p>
+    <h3 class="header-font text-2xl md:text-3xl font-bold text-gray-800">
+        +<span id="subs-count">0</span>
+    </h3>
+</div>
+    <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
+        <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Total Views</p>
+        <h3 id="views-count" class="header-font text-2xl md:text-3xl font-bold text-gray-800">0</h3>
+    </div>
+    <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
+        <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Total Impressions</p>
+        <h3 id="impressions-count" class="header-font text-2xl md:text-3xl font-bold text-indigo-600">0</h3>
+    </div>
+    <div class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-600 text-center card-hover">
+        <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">Click-Through Rate</p>
+        <h3 class="header-font text-2xl md:text-3xl font-bold text-gray-800">7.1%</h3>
+    </div>
+</div>
 
 			<section class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 mb-12">
     <h2 class="header-font text-2xl font-bold text-gray-800 mb-6 text-center">
@@ -59,29 +61,24 @@
     </h2>
 
     <div class="flex flex-wrap items-center justify-center gap-10 opacity-80">
-        <a href="https://www.devart.com" target="_blank"
+        <a href="https://youtu.be/spBM6hFma4c" target="_blank"
            class="grayscale hover:grayscale-0 transition">
             <img src="devart.png" alt="Devart" class="h-10">
         </a>
 
-        <a href="https://zzzprojects.com" target="_blank"
+        <a href="https://youtu.be/_yyru5V2qVA" target="_blank"
            class="flex items-center gap-3 grayscale hover:grayscale-0 transition">
             <img src="zzzprojects.png" alt="ZZZ Projects" class="h-10">
             <span class="font-semibold text-gray-700 whitespace-nowrap">
                 ZZZ Projects
             </span>
         </a>
-
-        <!-- أضف أي لوجو آخر هنا لاحقًا -->
     </div>
 
     <p class="text-center text-sm text-gray-500 mt-6">
         Brands and development teams that trusted Sarrawy Dev for technical exposure.
     </p>
 </section>
-
-
-
 
         <div class="grid lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2 space-y-8">
@@ -189,7 +186,6 @@
     </p>
 </section>
 
-
                 <section class="bg-indigo-50 p-8 rounded-3xl border border-indigo-100">
                     <h3 class="header-font text-xl font-bold mb-4 text-indigo-700">Partnership Options</h3>
                     <ul class="space-y-4">
@@ -216,51 +212,37 @@
         </div>
     </main>
 
-   <script>
-        // Modal Logic
-        function openModal(src) {
-            const modal = document.getElementById('modal-overlay');
-            const modalImg = document.getElementById('modal-img');
-            modalImg.src = src;
-            modal.style.display = 'flex';
-            setTimeout(() => modal.style.opacity = '1', 10);
-        }
+  <script>
+    // دالة تحريك الأرقام المعدلة لتدعم الملايين (M) والآلاف (K)
+    function animateNumber(id, target, duration, suffix = '') {
+        const obj = document.getElementById(id);
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const current = (progress * target).toFixed(1);
+            
+            // إزالة الـ .0 إذا كان الرقم صحيحاً
+            const displayValue = current.endsWith('.0') ? Math.floor(current) : current;
+            obj.innerText = displayValue + suffix;
 
-        function closeModal() {
-            const modal = document.getElementById('modal-overlay');
-            modal.style.opacity = '0';
-            setTimeout(() => modal.style.display = 'none', 300);
-        }
-
-        // Fixed Animation Logic (No API Key)
-        function animateNumber(id, target, duration, isK = false) {
-            const obj = document.getElementById(id);
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const current = Math.floor(progress * target);
-                
-                if (isK) {
-                    obj.innerText = (current / 10).toFixed(1) + 'K';
-                } else {
-                    obj.innerText = current.toLocaleString();
-                }
-
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        window.onload = function() {
-            // القيم مثبتة يدوياً بناءً على صور التحليلات لضمان الأمان
-            animateNumber('subs-count', 2979, 2000);   // المشتركين
-            animateNumber('views-count', 5825, 2000, true); // 582.5K مشاهدة
-            animateNumber('video-count', 160, 2000);   // الفيديوهات
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
         };
-    </script>
-</body>
+        window.requestAnimationFrame(step);
+    }
 
+    window.onload = function() {
+   
+    animateNumber('subs-count', 3, 2000, 'K');   
+    
+    
+    animateNumber('views-count', 590.2, 2000, 'K'); 
+    
+  
+    animateNumber('impressions-count', 3.8, 2000, 'M'); 
+};
+</script>
+</body>
 </html>
