@@ -243,6 +243,24 @@
   
     animateNumber('impressions-count', 3.8, 2000, 'M'); 
 };
+
+	  // دالة فتح النافذة المنبثقة (Modal)
+function openModal(src) {
+    const modal = document.getElementById('modal-overlay');
+    const modalImg = document.getElementById('modal-img');
+    modal.style.display = 'flex';
+    modalImg.src = src;
+    // منع التمرير في الخلفية عند فتح الصورة
+    document.body.style.overflow = 'hidden';
+}
+
+// دالة إغلاق النافذة المنبثقة
+function closeModal() {
+    const modal = document.getElementById('modal-overlay');
+    modal.style.display = 'none';
+    // إعادة التمرير لوضعه الطبيعي
+    document.body.style.overflow = 'auto';
+}
 </script>
 </body>
 </html>
